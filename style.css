@@ -1,7 +1,2 @@
-.keyblade {
-    width: 100%;
-    height: 400px;
-    background-color: yellow;
-}
-
-;
+/* Styles have been moved to css/style.css as per project folder structure */
+@import url("css/style.css");

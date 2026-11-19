@@ -4,14 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model Viewer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Kingdom Key - 3D Viewer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Model Viewer component -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.4.0/model-viewer.min.js"></script>
 </head>
 
 <body>
-    <model-viewer class="keyblade" alt="Keyblade" auto-rotate src="3D/Kingdom Key.glb" ar shadow-intensity="1"
-        camera-controls touch-action="pan-y" ar></model-viewer>
+    <main class="container">
+        <!-- 3D Model Viewer -->
+        <model-viewer 
+            id="keyblade-viewer"
+            src="3D/Kingdom Key.glb" 
+            ar 
+            ar-modes="webxr scene-viewer quick-look" 
+            camera-controls 
+            tone-mapping="neutral" 
+            shadow-intensity="0.93" 
+            exposure="0.83" 
+            shadow-softness="0.29">
+
+            <!-- Hotspots with positions and data-key linking to JSON content -->
+            <button class="Hotspot" slot="hotspot-2" 
+                data-position="0.8810567918301143m 0.009092064596489369m 0.2553258547316577m" 
+                data-normal="0.0022260699474844466m 0.999997239006762m -0.0007527226860260755m" 
+                data-visibility-attribute="visible" 
+                data-key="mickey">
+                <div class="HotspotAnnotation">mickey</div>
+            </button>
+
+            <button class="Hotspot" slot="hotspot-3" 
+                data-position="-0.7501878641224747m 0.028411784722266464m -0.11007935099096888m" 
+                data-normal="0.0001360941075410771m 0.9999991088689758m 0.0013280586012556744m" 
+                data-visibility-attribute="visible" 
+                data-key="teeth">
+                <div class="HotspotAnnotation">teeth</div>
+            </button>
+
+            <button class="Hotspot" slot="hotspot-4" 
+                data-position="0.4477492125761282m 0.043100319664652m -0.0015527916452239277m" 
+                data-normal="-0.001267181538844683m 0.951438392701315m 0.30783661111844063m" 
+                data-visibility-attribute="visible" 
+                data-key="handle">
+                <div class="HotspotAnnotation">handle</div>
+            </button>
+
+            <!-- Loading progress bar -->
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+            </div>
+
+            <!-- AR buttons -->
+            <button slot="ar-button" id="ar-button">
+                View in your space
+            </button>
+            <div id="ar-prompt">
+                <img src="https://modelviewer.dev/shared-assets/icons/hand.png" alt="AR Prompt Icon">
+            </div>
+        </model-viewer>
+
+        <!-- Description Box below the 3D Model -->
+        <div id="info-box" class="info-box">
+            <h2 id="info-title">Click a hotspot</h2>
+            <p id="info-description">Click any of the points on the 3D model above to read more details.</p>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

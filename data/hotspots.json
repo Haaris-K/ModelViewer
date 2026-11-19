@@ -1,0 +1,14 @@
+{
+  "mickey": {
+    "title": "Mickey Keychain",
+    "description": "A silver token attached to the base of the Kingdom Key's hilt, featuring the iconic silhouette of Mickey Mouse."
+  },
+  "teeth": {
+    "title": "Keyblade Teeth",
+    "description": "The crown-shaped end of the blade designed to unlock gateways and channel combat magic."
+  },
+  "handle": {
+    "title": "Grip & Handguard",
+    "description": "The protective golden handguard and blue cylindrical grip that provide balance and control in battle."
+  }
+}
